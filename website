@@ -1,0 +1,275 @@
+import React, { useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Calendar, Mail, Phone, MapPin, Clock } from 'lucide-react';
+
+const MentalHealthWebsite = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="bg-white shadow-sm fixed w-full z-10">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <span className="text-xl font-bold text-teal-500">Cabinet de Santé Mentale</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#accueil" className="text-gray-700 hover:text-teal-500">Accueil</a>
+              <a href="#services" className="text-gray-700 hover:text-teal-500">Services</a>
+              <a href="#apropos" className="text-gray-700 hover:text-teal-500">À Propos</a>
+              <a href="#contact" className="text-gray-700 hover:text-teal-500">Contact</a>
+              <a href="#blog" className="text-gray-700 hover:text-teal-500">Blog</a>
+              <button className="bg-gradient-to-r from-teal-400 to-cyan-500 text-white px-4 py-2 rounded-md hover:opacity-90 transition-all">
+                Prendre RDV
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="accueil" className="pt-24 pb-12 bg-gradient-to-b from-teal-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Votre Bien-être Mental est Notre Priorité
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
+              Un accompagnement professionnel et bienveillant pour votre épanouissement
+            </p>
+            <button className="bg-gradient-to-r from-teal-400 to-cyan-500 text-white px-8 py-3 rounded-md text-lg hover:opacity-90 transition-all">
+              Première Consultation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Nos Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-t-4 border-teal-400">
+              <CardHeader>
+                <CardTitle className="text-teal-600">Thérapie Individuelle</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Accompagnement personnalisé pour surmonter vos défis personnels
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-t-4 border-cyan-400">
+              <CardHeader>
+                <CardTitle className="text-teal-600">Thérapie de Couple</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Retrouvez l'harmonie dans votre relation
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="border-t-4 border-teal-400">
+              <CardHeader>
+                <CardTitle className="text-teal-600">Thérapie Familiale</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Renforcez les liens familiaux et la communication
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* À Propos */}
+      <section id="apropos" className="py-12 bg-gradient-to-b from-white to-teal-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">À Propos</h2>
+              <p className="text-gray-600 mb-4">
+                Avec plus de 10 ans d'expérience, notre cabinet offre un espace sécurisant 
+                pour votre développement personnel et votre bien-être mental.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Notre approche intégrative s'adapte à vos besoins spécifiques pour vous 
+                accompagner au mieux dans votre cheminement.
+              </p>
+            </div>
+            <div className="bg-gradient-to-br from-teal-100 to-cyan-100 h-64 rounded-lg shadow-lg">
+              {/* Placeholder pour photo du thérapeute */}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignages */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Témoignages</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-teal-500 text-4xl mb-4">"</div>
+                <p className="text-gray-600 italic mb-4">
+                  "Un accompagnement professionnel qui m'a permis de retrouver confiance en moi."
+                </p>
+                <p className="text-gray-800 font-semibold">Marie D.</p>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="text-teal-500 text-4xl mb-4">"</div>
+                <p className="text-gray-600 italic mb-4">
+                  "Une écoute attentive et des conseils précieux qui m'ont aidé à avancer."
+                </p>
+                <p className="text-gray-800 font-semibold">Pierre M.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="py-12 bg-gradient-to-b from-teal-50 to-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Contact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="bg-white p-8 rounded-lg shadow-sm">
+              <div className="flex items-center mb-6">
+                <MapPin className="w-6 h-6 text-teal-500 mr-4" />
+                <p className="text-gray-600">123 Rue de la Santé, 75000 Paris</p>
+              </div>
+              <div className="flex items-center mb-6">
+                <Phone className="w-6 h-6 text-teal-500 mr-4" />
+                <p className="text-gray-600">01 23 45 67 89</p>
+              </div>
+              <div className="flex items-center mb-6">
+                <Mail className="w-6 h-6 text-teal-500 mr-4" />
+                <p className="text-gray-600">contact@cabinet-sante-mentale.fr</p>
+              </div>
+              <div className="flex items-center">
+                <Clock className="w-6 h-6 text-teal-500 mr-4" />
+                <p className="text-gray-600">Lun-Ven: 9h-19h</p>
+              </div>
+            </div>
+            <form className="space-y-6">
+              <div>
+                <input
+                  type="text"
+                  placeholder="Nom"
+                  className="w-full p-3 rounded-md border border-gray-300 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full p-3 rounded-md border border-gray-300 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Message"
+                  rows={4}
+                  className="w-full p-3 rounded-md border border-gray-300 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 outline-none"
+                ></textarea>
+              </div>
+              <button className="w-full bg-gradient-to-r from-teal-400 to-cyan-500 text-white px-6 py-3 rounded-md hover:opacity-90 transition-all">
+                Envoyer
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog */}
+      <section id="blog" className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Actualités & Articles</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-teal-600">Gérer son anxiété au quotidien</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Découvrez des techniques efficaces pour mieux gérer votre anxiété...
+                </p>
+                <a href="#" className="text-teal-500 hover:text-teal-600">
+                  Lire la suite →
+                </a>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-teal-600">L'importance du sommeil</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Comment améliorer la qualité de votre sommeil pour une meilleure santé mentale...
+                </p>
+                <a href="#" className="text-teal-500 hover:text-teal-600">
+                  Lire la suite →
+                </a>
+              </CardContent>
+            </Card>
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <CardTitle className="text-teal-600">Méditation et bien-être</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  Initiation à la méditation et ses bienfaits sur la santé mentale...
+                </p>
+                <a href="#" className="text-teal-500 hover:text-teal-600">
+                  Lire la suite →
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-8">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Cabinet de Santé Mentale</h3>
+              <p className="text-teal-100">
+                Un accompagnement professionnel pour votre bien-être mental
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Liens Rapides</h3>
+              <ul className="space-y-2">
+                <li><a href="#accueil" className="text-teal-100 hover:text-white">Accueil</a></li>
+                <li><a href="#services" className="text-teal-100 hover:text-white">Services</a></li>
+                <li><a href="#contact" className="text-teal-100 hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Horaires</h3>
+              <p className="text-teal-100">
+                Lundi - Vendredi: 9h - 19h<br />
+                Samedi: Sur rendez-vous<br />
+                Dimanche: Fermé
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-teal-400 mt-8 pt-8 text-center">
+            <p className="text-teal-100">
+              © 2024 Cabinet de Santé Mentale. Tous droits réservés.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default MentalHealthWebsite;
